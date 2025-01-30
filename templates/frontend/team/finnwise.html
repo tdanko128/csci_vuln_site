@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Finnwise - Ethereal Realms{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Finnwise</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/Finnwise.jpg') }}" class="img-fluid rounded" alt="Finnwise">
+            </div>
+            <div class="col">
+                <p>Finnwise, a small and unassuming villager from Evergrove, is dismissed by many as unimportant. However, his sharp wit, resourcefulness, and unwavering loyalty make him the true hero of the Etheral Realms.</p>
+                <p>While Lioran carries the Emberstone, it is Finnwise’s cleverness that ensures its safe passage. In the final moments, as the group reaches the Pillar of Eternity, Finnwise performs a selfless act that activates the Emberstone, reigniting the Pillar and banishing the Shadowborn.</p>
+                <p>Though his courage goes unnoticed by history, Finnwise’s story is a reminder that even the smallest among us can change the fate of the world.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

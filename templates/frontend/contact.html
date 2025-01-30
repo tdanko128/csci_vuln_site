@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Ethereal Realms{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <h2>Send Us a Message</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Command Injection Output -->
+    {% if output %}    
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2>Command Output</h2>
+            <div class="p-3 bg-light border rounded">
+                <pre>{{ output }}</pre>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- XSS Reflection -->
+    {% if message %}    
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2>Your Message</h2>
+            <div class="p-3 bg-light border rounded">
+                {{ message|safe }}
+            </div>
+        </div>
+    </div>
+    {% endif %}   
+</div>
+{% endblock %}

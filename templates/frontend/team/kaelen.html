@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Kaelen - Ethereal Realms{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>Kaelen</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/Kaelen.jpg') }}" class="img-fluid rounded" alt="Kaelen">
+            </div>
+            <div class="col">
+                <p>Kaelen is a wandering ranger from the forested realm of Greenveil, known for his unmatched precision with a bow. A lone wolf by nature, Kaelen reluctantly joins the group after witnessing the Shadowborn’s devastation of his homeland.</p>
+                <p>Over time, Kaelen grows to trust the group and becomes their scout and tracker, uncovering hidden paths and defending them from ambushes. His silent bravery and quick thinking save the heroes on multiple occasions.</p>
+                <p>Kaelen’s journey from solitude to camaraderie reflects the power of unity in overcoming darkness.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

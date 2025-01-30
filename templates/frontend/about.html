@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Ethereal Realms{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h2>About Us</h2>
+    <div class="container my-5">
+
+        <!-- Section 1: Introduction to Etheral Realms -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/Landscape.jpg') }}" class="img-fluid rounded" alt="Etheral Landscape">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p>
+                    Welcome to Etheral, a realm of endless possibilities and timeless wonder. Here, the rolling meadows, crystal-clear rivers, and awe-inspiring mountain ranges create a world teeming with adventure. Each region tells a unique story, offering beauty, mystery, and inspiration for those who dare to explore. From the tranquil Meadows of Tranquility to the rugged peaks of the Frostbane Mountains, Etheral is a land shaped by ancient prophecies, heroic deeds, and the unyielding spirit of its people.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 2: The Prophecy and the Heroes -->
+        <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/Runes.jpg') }}" class="img-fluid rounded" alt="Prophecy">
+            </div>
+            <div class="col-md-6 order-md-1 d-flex align-items-center">
+                <p>
+                    According to the ancient prophecy of the Dawnbringers, six heroes would rise during the Age of Discord to restore balance and unity to the Etheral Realms. These heroes, drawn from diverse corners of the world, would wield unique powers and carry the hopes of all who sought peace. Their mission was to awaken the Pillar of Eternity, an ancient source of harmony, and banish the darkness threatening to consume the land.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: The Heroes -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/Thalnor.jpg') }}" class="img-fluid rounded" alt="Thalnor">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p>
+                    <strong>Thalnor</strong>, the Warden of the Eternal Flame, united the fractured realms by forging the Alliance of Dawn. His unmatched leadership and bravery were instrumental in rallying the kingdoms against the Shadowborn, the dark forces threatening Etheral.
+                </p>
+                <p>
+                    <strong>Lioran</strong>, the Bearer of Light, discovered the mystical Emberstone and carried it through countless perils to reignite the Pillar of Eternity. His compassion and determination inspired hope across the land.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/Aeronis.jpg') }}" class="img-fluid rounded" alt="Aeronis">
+            </div>
+            <div class="col-md-6 order-md-1 d-flex align-items-center">
+                <p>
+                    <strong>Aeronis</strong>, the Arcane Scholar from the floating city of Aetheris, deciphered the prophecy and unlocked the secrets of the Celestial Shard. His mastery of magic shielded the group from countless magical threats.
+                </p>
+                <p>
+                    <strong>Durnik</strong>, the Stoneheart Defender, hailed from the Ironstone Dwarves. His unyielding resolve and skill in crafting fortified the heroes’ defenses, ensuring their survival in the darkest hours.
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/Kaelen.jpg') }}" class="img-fluid rounded" alt="Kaelen">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p>
+                    <strong>Kaelen</strong>, the Silverblade Archer, scouted treacherous paths and defended the group from ambushes. His journey from solitude to camaraderie symbolized the unity required to overcome darkness.
+                </p>
+                <p>
+                    <strong>Finnwise</strong>, the Hidden Hero, was the smallest and most unassuming of the group. Yet, it was his cleverness and selflessness that ensured the Emberstone reached the Pillar of Eternity. Though history may overlook his contributions, Finnwise remains the true savior of Etheral.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4: The Final Battle -->
+        <div class="row mb-5">
+            <div class="col-md-6 order-md-2">
+                <img src="{{ url_for('static', filename='images/FinalBattle.jpg') }}" class="img-fluid rounded" alt="Final Battle">
+            </div>
+            <div class="col-md-6 order-md-1 d-flex align-items-center">
+                <p>
+                    The climactic battle at the Pillar of Eternity was a testament to their unity and strength. While Thalnor led a diversionary attack against the Shadowborn’s armies, Aeronis used his magic to disable the dark barriers surrounding the Pillar. Durnik and Kaelen protected Lioran and Finnwise as they approached the sacred site. In the final moments, Finnwise activated the Emberstone, reigniting the Pillar and banishing the Shadowborn forever.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 5: Legacy -->
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='images/Legacy.jpg') }}" class="img-fluid rounded" alt="Legacy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <p>
+                    The Era of Radiance that followed their victory brought peace and prosperity to the Etheral Realms. Monuments were erected to honor the heroes, and their stories became the foundation of a united world. Each hero’s legacy lives on in the hearts of the people, a reminder that unity, courage, and hope can overcome even the greatest of challenges.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</div>
+
+{% endblock %}
