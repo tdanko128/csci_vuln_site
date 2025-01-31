@@ -6,7 +6,7 @@ def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 # Database setup
-db_path = 'middle_earth.db'
+db_path = 'ethreal_realm.db'
 if not os.path.exists(db_path):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()

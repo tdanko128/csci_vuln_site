@@ -13,7 +13,7 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        conn = sqlite3.connect('middle_earth.db')
+        conn = sqlite3.connect('ethreal_realm.db')
         c = conn.cursor()
         
         # Vulnerable to SQL Injection

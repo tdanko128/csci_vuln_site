@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  etheral_app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: etheral_app
+    restart: always
+    expose:
+      - "5000"
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: etheral_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/certs:/etc/nginx/certs
+    depends_on:
+      - etheral_app
