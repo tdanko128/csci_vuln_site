@@ -30,6 +30,7 @@ def login():
 
     return render_template('login.html', error=error)
 @backend.route('/dashboard')
+@backend.route('/')
 def dashboard():
     if 'username' in session:
         return render_template('dashboard.html', username=session['username'])
