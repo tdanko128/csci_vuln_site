@@ -24,7 +24,12 @@ def contact():
 
 @frontend.route('/team')
 def team():
-    return render_template('team.html')
+    metadata = {
+        "description": "Welcome to the Etheral Realms! A land of magic and mystery.",
+        "keywords": "Etheral, Adventure, Magic, Guild, Quest, Heroes, ThisFunkyChicken",
+        "hidden_keywords": "ASuperSecretKeyWordCalledFunkyChicken HiddenTreasure AncientSpell"
+    }
+    return render_template('team.html',metadata=metadata)
 
 @frontend.route('/team/<member>')
 def team_member(member):
