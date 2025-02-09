@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, Response
 import os
 
 frontend = Blueprint('frontend', __name__, template_folder='templates/frontend')
@@ -24,12 +24,10 @@ def contact():
 
 @frontend.route('/team')
 def team():
-    metadata = {
-        "description": "Welcome to the Etheral Realms! A land of magic and mystery.",
-        "keywords": "Etheral, Adventure, Magic, Guild, Quest, Heroes, ThisFunkyChicken",
-        "hidden_keywords": "ASuperSecretKeyWordCalledFunkyChicken HiddenTreasure AncientSpell"
-    }
-    return render_template('team.html',metadata=metadata)
+    rendered = render_template('team.html')
+    response = Response(rendered)
+    response.headers["X-Random"] = "ThisFunkyChicken"
+    return response
 
 @frontend.route('/team/<member>')
 def team_member(member):
