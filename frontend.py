@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, Response
+from flask import Blueprint, render_template, request, send_from_directory
 import os
 
 frontend = Blueprint('frontend', __name__, template_folder='templates/frontend')
@@ -24,11 +24,16 @@ def contact():
 
 @frontend.route('/team')
 def team():
-    rendered = render_template('team.html')
-    response = Response(rendered)
-    response.headers["X-Random"] = "ThisFunkyChicken"
-    return response
+    return render_template('team.html')
 
 @frontend.route('/team/<member>')
 def team_member(member):
     return render_template(f'team/{member}.html', member=member)
+
+@frontend.route('/events')
+def events():
+    return render_template('events.html')
+
+@frontend.route('/events/wmh')
+def download_flyer():
+    return (send_from_directory('static/images','Event.jpg'))
