@@ -10,14 +10,16 @@ def hash_password(password):
 @backend.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    username = request.args.get('username') if request.method == 'GET' else request.form.get('username')
+    password = request.args.get('password') if request.method == 'GET' else request.form.get('password')
+
+    if username and password:
         conn = sqlite3.connect('ethreal_realm.db')
         c = conn.cursor()
-        
-        # Vulnerable to SQL Injection
+
+        # 🚨 Vulnerable to SQL Injection
         query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+        print(f"Executing query: {query}")  # Debugging SQL queries
         c.execute(query)
         user = c.fetchone()
         conn.close()
@@ -29,6 +31,8 @@ def login():
             error = 'Invalid credentials. Please try again.'
 
     return render_template('login.html', error=error)
+
+
 @backend.route('/dashboard')
 @backend.route('/')
 def dashboard():
