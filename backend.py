@@ -13,7 +13,7 @@ def login():
     username = request.args.get('username') if request.method == 'GET' else request.form.get('username')
     password = request.args.get('password') if request.method == 'GET' else request.form.get('password')
 
-    if username and password:
+    if username:
         conn = sqlite3.connect('ethreal_realm.db')
         c = conn.cursor()
 
