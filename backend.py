@@ -13,12 +13,13 @@ def login():
     username = request.args.get('username') if request.method == 'GET' else request.form.get('username')
     password = request.args.get('password') if request.method == 'GET' else request.form.get('password')
 
+
     if username:
         conn = sqlite3.connect('ethreal_realm.db')
         c = conn.cursor()
 
         # 🚨 Vulnerable to SQL Injection
-        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+        query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{hash_password(password)}'"
         print(f"Executing query: {query}")  # Debugging SQL queries
         c.execute(query)
         user = c.fetchone()
